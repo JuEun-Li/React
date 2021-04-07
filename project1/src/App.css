@@ -1,0 +1,6 @@
+div.menu a{
+    margin: 1%;
+}
+div.menu a.active {
+    color: lightblue; /* 현재 메뉴 색 */
+   }
