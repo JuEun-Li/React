@@ -129,6 +129,7 @@ class Home extends Component {
             총 수량: {this.state.count1 + this.state.count2 + this.state.count3 }   <br/> 
             
             <Button color="info" type="button" onClick={this.reset.bind(this)}>reset</Button>
+            
           </div>
       );
     }

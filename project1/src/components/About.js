@@ -4,13 +4,15 @@ class About extends Component {
   constructor(props){
     super(props);
     this.state={
-      
+      content: "bbb"
     }
   }
     render() {
       return (
         <div className="container">
-          aaa
+          {this.state.content}
+          {this.props.title}
+          {this.props.desc}
         </div>
       );
     }
