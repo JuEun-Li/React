@@ -30,6 +30,7 @@ class App extends Component {
       _desc = this.state.welcome.desc;
     } else if (this.state.mode === "read") {
         let i = 0;
+        
         while(i < this.state.contents.length){
             let data = this.state.contents[i];
             if(data.id === this.state.selected_content_id) {
