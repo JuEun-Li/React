@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import './css/home.css'
+import './css/home.css';
+
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mode:'read',
             content: { title:"hello", sub: "nice to meet you"},
             content_list: [
-                {id: 1, title:"list1", desc: "list 입니다."},
-                {id: 2, title:"list2", desc: "list 입니다."},
-                {id: 3, title:"list2", desc: "list 입니다."}
+                {id: 1, title:"list1", desc: "list1 입니다."},
+                {id: 2, title:"list2", desc: "list2 입니다."},
+                {id: 3, title:"list3", desc: "list3 입니다."}
             ],
             count1: 0,
             count2: 0,
@@ -69,29 +71,25 @@ class Home extends Component {
             })
         }
     }
+    reset() {
+        this.setState({
+            count1: 0,
+            count2: 0,
+            count3: 0
+        })
+    } // 모든 수량 초기화
 
     render() {
-        let data = null;
-        let _title, _desc = null;
-
-        for(let i = 0; i < this.state.content_list.length; i++) {
-            data = this.state.content_list[i];
-            if(data.id === this.state.selected_content_id) {
-                _title = data.title;
-                _desc = data.desc;
-                break;
-            }
+        let lists = [];
+        let data = this.state.content_list;
+        for(let i = 0; i < data.length; i++){
+            lists.push(<li key={data[i].id}>{data[i].title} {data[i].desc}</li>)
         }
-        _title = this.state.content_list[0].title; 
-        _desc = this.state.content_list[0].desc;
-
       return (
           <div className="container">
             <h1>page1</h1>
                 <ul>
-                    <li>{this.state.content.title}</li>
-                    <li>{this.state.content.sub}</li>
-                    <li>{this.props.data}</li>
+                    {lists}
                 </ul>
             <div>
                 <div>
@@ -119,7 +117,11 @@ class Home extends Component {
                         <button type="button" onClick={this.decrease3.bind(this)}>--</button><br/>
                     </div>
                 </div> 
-            </div>    
+            </div>
+
+            총 수량: {this.state.count1 + this.state.count2 + this.state.count3 }   <br/> 
+            
+            <button type="button" onClick={this.reset.bind(this)}>reset</button>
           </div>
       );
     }
