@@ -82,7 +82,7 @@ class Home extends Component {
                 break;
             }
         }
-        _title = this.state.content_list[0].title;
+        _title = this.state.content_list[0].title; 
         _desc = this.state.content_list[0].desc;
 
       return (
