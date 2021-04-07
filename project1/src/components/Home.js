@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './css/home.css';
+import { Button } from 'reactstrap';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             mode:'read',
-            content: { title:"hello", sub: "nice to meet you"},
+            content: { title:"sub_title, ", sub: "부가설명입니다."},
             content_list: [
                 {id: 1, title:"list1", desc: "list1 입니다."},
                 {id: 2, title:"list2", desc: "list2 입니다."},
@@ -91,37 +92,43 @@ class Home extends Component {
                 <ul>
                     {lists}
                 </ul>
+
+            <div>
+                {this.state.content.title} 
+                {this.state.content.sub}
+            </div>
+
             <div>
                 <div>
                     <div className="box-display">
-                        <div className="box col-lg-4">box1</div><br/>
+                        <div className="box col-lg-4 rounded">box1</div><br/>
                         {this.state.count1}<br/>
 
-                        <button type="button" onClick={this.increase1.bind(this)}>++
-                        </button>
+                        <Button color="success" type="button" onClick={this.increase1.bind(this)}>++
+                        </Button>
 
-                        <button type="button" onClick={this.decrease1.bind(this)}>--</button><br/>          
+                        <Button type="button" onClick={this.decrease1.bind(this)}>--</Button><br/>          
                     </div>
 
                     <div className="box-display">
-                        <div className="box col-lg-4">box2</div><br/>
+                        <div className="box col-lg-4 rounded">box2</div><br/>
                         {this.state.count2}<br/>
-                        <button type="button" onClick={this.increase2.bind(this)}>++</button>
-                        <button type="button" onClick={this.decrease2.bind(this)}>--</button><br/>
+                        <Button  color="success" type="button" onClick={this.increase2.bind(this)}>++</Button>
+                        <Button type="button" onClick={this.decrease2.bind(this)}>--</Button><br/>
                     </div>  
 
                     <div className="box-display">
-                        <div className="box col-lg-4">box3</div><br/>
+                        <div className="box col-lg-4 rounded">box3</div><br/>
                         {this.state.count3}<br/>
-                        <button type="button" onClick={this.increase3.bind(this)}>++</button>
-                        <button type="button" onClick={this.decrease3.bind(this)}>--</button><br/>
+                        <Button color="success" type="button" onClick={this.increase3.bind(this)}>++</Button>
+                        <Button type="button" onClick={this.decrease3.bind(this)}>--</Button><br/>
                     </div>
                 </div> 
             </div>
 
             총 수량: {this.state.count1 + this.state.count2 + this.state.count3 }   <br/> 
             
-            <button type="button" onClick={this.reset.bind(this)}>reset</button>
+            <Button color="info" type="button" onClick={this.reset.bind(this)}>reset</Button>
           </div>
       );
     }
