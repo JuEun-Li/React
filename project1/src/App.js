@@ -77,8 +77,6 @@ class App extends Component {
           <Route
             path="/About"
             component={About}
-            title={this.state.content.title}
-            desc={this.state.content.desc}
           />
           <Route path="/Topic" component={Topic} />
         </div>

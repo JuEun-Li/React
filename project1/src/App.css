@@ -2,8 +2,9 @@ div.menu a{
     margin: 1%;
     color: darkgrey;
     font-size: 1.3em;
-    padding: 3%;
+    padding: 2%;
     display: inline-block;
+    text-decoration: none;
 }
 div.menu a.active {
     color: lightblue; /* 현재 메뉴 색 */

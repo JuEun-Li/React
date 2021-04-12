@@ -58,6 +58,12 @@ class About extends Component {
           onClick={this.ChangePage.bind(this)}
         >button3</Button>
           <div>{lists[2]}</div><br/>
+
+          <ul>
+            <li><a href="/create">create</a></li>
+            <li><a href="/update">update</a></li>
+            <li><input type="button" value="delete"></input></li>
+          </ul>
         </div>
       );
     }
