@@ -1,0 +1,27 @@
+import React, { Component } from 'react';
+// create 상태일 때의 폼 제작 구간
+
+class CreateContent extends Component {
+    render() {
+        return (
+            <div>
+                <h3>create</h3>
+                <form action="/create_process" method="post"
+                onSubmit={function(e){
+                    e.preventDefault();
+                    this.props.onSubmit(
+                        e.target.title.value,
+                        e.target.desc.value
+                    );
+                }.bind(this)}
+                ></form>
+
+                <p><input type="text" name="title" placeholder="title"></input></p>
+                <p><textarea name="desc" placeholder="description"></textarea></p>
+                <p><input type="submit"></input></p>
+            </div>
+        );
+    }
+}
+
+export default CreateContent;
